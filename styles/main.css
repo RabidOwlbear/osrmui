@@ -1,0 +1,291 @@
+.application.osrmui.osr-actor-card {
+  --background-color: hsl(276, 12%, 8%);
+  --border-color: #bbad88;
+  --actor-color: rgba(91, 0, 7, 0.7);
+  --actor-hover: rgb(97, 0, 8);
+  --actor-stat-txt: rgb(70, 0, 6);
+  --actor-glow: #ff2b35a1;
+  --monster-color: rgba(0, 44, 73, 0.8);
+  --monster-hover: #00406b;
+  --monster-btn-hover: #00406b;
+  --monster-glow: #00ffff8a;
+  --group-color-green: #276b00a8;
+  --group-color-blue: rgba(1, 56, 94, 0.7);
+  --group-color-red: rgba(112, 1, 10, 0.7);
+  --group-color-orange: rgba(255, 136, 0, 0.547);
+  --group-color-yellow: rgba(255, 222, 38, 0.55);
+  --group-color-purple: rgba(103, 0, 129, 0.705);
+  --group-color-white: rgba(196, 189, 175, 0.808);
+  --group-color-black: rgba(51, 51, 51, 0.774);
+  --group-d-color-green: #1d4d01a8;
+  --group-d-color-blue: rgba(0, 46, 77, 0.5);
+  --group-d-color-red: rgba(94, 1, 1, 0.671);
+  --group-d-color-orange: rgba(143, 77, 2, 0.658);
+  --group-d-color-yellow: rgba(70, 62, 19, 0.63);
+  --group-d-color-purple: rgba(76, 0, 95, 0.705);
+  --group-d-color-white: rgba(151, 146, 137, 0.808);
+  --group-d-color-black: rgba(37, 37, 37, 0.7);
+  --glow-color: var(--actor-glow);
+  --glow-green: #5eff009c;
+  --glow-blue: #00ffff8a;
+  --glow-red: #ff2b35a1;
+  --glow-orange: #ffbd67;
+  --glow-yellow: #f7ff89;
+  --glow-purple: #f375ffb6;
+  --glow-white: #ffffff;
+  --glow-black: #161616d3;
+  --text-light: #f1ebd9;
+  --text-dark: #1f1e1f;
+  --text-color: var(--text-light);
+  --test-color: #00b800;
+  --btn-hover: var(--actor-hover);
+  --stat-bar-txt: var(--actor-stat-txt);
+  --gradient-color-a: var(--actor-color);
+  --gradient-color-b: var(--background-color);
+  color: var(--text-color);
+  background: transparent;
+  background-image: none;
+}
+.application.osrmui.osr-actor-card .window-content {
+  padding: 0.3rem;
+  color: var(--text-color);
+  backdrop-filter: none;
+}
+.application.osrmui.osr-actor-card.monster-card .img, .application.osrmui.osr-actor-card.actor-card .img {
+  box-shadow: 0 0 10px 5px var(--glow-color);
+}
+.application.osrmui.osr-actor-card.monster-card header, .application.osrmui.osr-actor-card.actor-card header {
+  background-color: var(--gradient-color-a);
+}
+.application.osrmui.osr-actor-card.monster-card .window-content, .application.osrmui.osr-actor-card.actor-card .window-content {
+  background: linear-gradient(to bottom, var(--gradient-color-a), var(--gradient-color-b));
+}
+.application.osrmui.osr-actor-card.monster-card .window-content .btn:hover, .application.osrmui.osr-actor-card.actor-card .window-content .btn:hover {
+  background-color: var(--btn-hover);
+  box-shadow: 0 0 6px 3px var(--glow-color);
+}
+.application.osrmui.osr-actor-card.monster-card .window-content .ability-row:hover, .application.osrmui.osr-actor-card.actor-card .window-content .ability-row:hover {
+  box-shadow: 0 0 6px 3px var(--glow-color);
+}
+.application.osrmui.osr-actor-card.monster-card .window-content .save-row:hover, .application.osrmui.osr-actor-card.actor-card .window-content .save-row:hover {
+  box-shadow: 0 0 6px 3px var(--glow-color);
+}
+.application.osrmui.osr-actor-card.monster-card .window-content .ability-icon:hover, .application.osrmui.osr-actor-card.actor-card .window-content .ability-icon:hover {
+  background-color: var(--gradient-color-a);
+  box-shadow: 0 0 6px 3px var(--glow-color);
+}
+.application.osrmui.osr-actor-card .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.application.osrmui.osr-actor-card header {
+  color: var(--text-color);
+}
+.application.osrmui.osr-actor-card .top-container {
+  color: var(--text-color);
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+.application.osrmui.osr-actor-card .top-container .right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+.application.osrmui.osr-actor-card .top-container .left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+.application.osrmui.osr-actor-card .top-container .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  font-weight: 600;
+  width: 100%;
+}
+.application.osrmui.osr-actor-card .top-container .row i {
+  font-size: 0.6rem;
+  margin-right: 0.2rem;
+}
+.application.osrmui.osr-actor-card .top-container .img {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+}
+.application.osrmui.osr-actor-card .top-container .btn {
+  display: grid;
+  height: 1.2rem;
+  width: 1.2rem;
+  cursor: pointer;
+  font-size: 0.6rem;
+  font-weight: 600;
+  place-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+.application.osrmui.osr-actor-card .top-container .btn i {
+  margin: 0;
+}
+.application.osrmui.osr-actor-card .stat-bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 2px solid var(--border-color);
+  border-right: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+}
+.application.osrmui.osr-actor-card .stat-bar .ability-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  width: 100%;
+  cursor: pointer;
+}
+.application.osrmui.osr-actor-card .stat-bar .ability-label {
+  font-weight: 600;
+  text-align: center;
+  width: 0.9rem;
+  color: var(--stat-bar-txt);
+  background-color: var(--border-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.application.osrmui.osr-actor-card .stat-bar .ability-value {
+  width: 1rem;
+  text-align: center;
+}
+.application.osrmui.osr-actor-card .cols {
+  display: flex;
+  height: 150px;
+  width: 100%;
+  flex: 1;
+}
+.application.osrmui.osr-actor-card .saves-container {
+  padding-top: 0.3rem;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  flex: 1;
+  border-right: 1px solid var(--border-color);
+  padding-right: 0.3rem;
+}
+.application.osrmui.osr-actor-card .saves-container .filler {
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+.application.osrmui.osr-actor-card .saves-container .filler::before {
+  content: "";
+  width: 70%;
+  height: 1px;
+  background-color: var(--border-color);
+  position: absolute;
+  left: 15%;
+  top: calc(100% - 0.5rem);
+}
+.application.osrmui.osr-actor-card .item-container {
+  position: relative;
+  padding: 0.3rem 0.3rem 0 0.3rem;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  flex: 1;
+  border-left: 1px solid var(--border-color);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.application.osrmui.osr-actor-card .item-container .abilities-container {
+  display: flex;
+  padding: 0.3rem 0 0.8rem 0;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 100%;
+  gap: 3px;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+.application.osrmui.osr-actor-card .item-container .abilities-container::before {
+  content: "";
+  width: 70%;
+  height: 1px;
+  background-color: var(--border-color);
+  position: absolute;
+  left: 15%;
+  top: calc(100% - 0.5rem);
+}
+.application.osrmui.osr-actor-card .item-container .attacks-container {
+  padding-bottom: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  border-bottom: 1px solid var(--border-color);
+}
+.application.osrmui.osr-actor-card .item-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.application.osrmui.osr-actor-card .save-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.application.osrmui.osr-actor-card .save-row .save-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+.application.osrmui.osr-actor-card .save-row .save-value {
+  width: 1.2rem;
+  text-align: center;
+}
+.application.osrmui.osr-actor-card .ability-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #bbad88;
+  background-color: #161318;
+  overflow: hidden;
+  cursor: pointer;
+}
+.application.osrmui.osr-actor-card .ability-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.osrmui-container {
+  position: absolute;
+  top: 0;
+  left: -110px;
+  height: 150px;
+  width: 100px;
+  background-color: rgba(22, 19, 24, 0.4509803922);
+  border: 1px solid #bbad88;
+}
+
+/*# sourceMappingURL=main.css.map */

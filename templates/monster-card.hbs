@@ -1,0 +1,171 @@
+<div class="main">
+  <div class="top-container">
+    <div class="right-col">
+      <div class="hp-container row" title="{{localize 'OSRMUI.hp'}}">
+        <i class="fas fa-heart"></i>
+        <div class="hp-min">
+          {{data.hp.value}}
+        </div>
+        <span class="slash">/</span>
+        <div class="hp-max">
+          {{data.hp.max}}
+      </div>
+    </div>
+    <div class="movement row" title="{{localize 'OSRMUI.movement'}}">
+      <i class="fas fa-shoe-prints"></i>
+      <div class="movement-min">
+        {{data.movement.base}}'
+      </div>
+      <span class="slash">/</span>
+      <div class="movement-max">
+        {{data.movement.encounter}}'
+      </div>
+    </div>
+    </div>
+    <img src="{{image}}" alt="{{name}}" class="img" data-action="openMonsterSheet" title="{{name}}">
+    <div class="left-col">
+      <div class="ac-container row" title="{{localize 'OSRMUI.ac'}}">
+        <i class="fas fa-shield-alt"></i>
+        <div class="ac-value">
+          {{data.ac.value}}
+        </div>
+        <span class="slash">/</span>
+        <div class="aac-value">
+          {{data.aac.value}}
+        </div>
+      </div>
+      {{#if isMonster}}
+      <div class="reset-btn row">
+        <div class="filler"></div>
+        <div class="reset-attacks btn" data-action="resetAttacks" title="{{localize 'OSRMUI.resetAttacks'}}">
+          <i class="fas fa-recycle"></i>
+        </div>
+      </div>
+      {{/if}}
+      <div class="thaco-container row" title="{{localize 'OSRMUI.thac0'}}">
+        <i class="fas fa-hand-back-fist"></i>
+        <div class="thaco-value">
+          {{data.thac0.value}}
+        </div>
+        <span class="slash">/</span>
+        <div class="ab-value">
+          {{data.thac0.bba}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{#if isMonster}}{{else}}
+  <div class="stat-bar">
+      <div class="ability-row str" data-action="rollCheck" data-ability="str" title="{{localize 'OSRMUI.roll'}} {{localize 'OSRMUI.strength'}} {{localize 'OSRMUI.check'}}">
+        <div class="ability-label">
+          <i class="fa-solid fa-hand-fist"></i>
+        </div>
+        <div class="ability-value">
+          {{data.scores.str.value}}
+        </div>
+      </div>
+      <div class="ability-row int" data-action="rollCheck" data-ability="int" title="{{localize 'OSRMUI.roll'}} {{localize 'OSRMUI.intelligence'}} {{localize 'OSRMUI.check'}}">
+        <div class="ability-label">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <div class="ability-value">
+          {{data.scores.int.value}}
+        </div>
+      </div>
+      <div class="ability-row wis" data-action="rollCheck" data-ability="wis" title="{{localize 'OSRMUI.roll'}} {{localize 'OSRMUI.wisdom'}} {{localize 'OSRMUI.check'}}">
+        <div class="ability-label">
+          <i class="fa-solid fa-head-side-brain"></i>
+        </div>
+        <div class="ability-value">
+          {{data.scores.wis.value}}
+        </div>
+      </div>
+      <div class="ability-row dex" data-action="rollCheck" data-ability="dex" title="{{localize 'OSRMUI.roll'}} {{localize 'OSRMUI.dexterity'}} {{localize 'OSRMUI.check'}}">
+        <div class="ability-label">
+          <i class="fa-solid fa-person-running"></i>
+        </div>
+        <div class="ability-value">
+          {{data.scores.dex.value}}
+        </div>
+      </div>
+      <div class="ability-row con" data-action="rollCheck" data-ability="con" title="{{localize 'OSRMUI.roll'}} {{localize 'OSRMUI.constitution'}} {{localize 'OSRMUI.check'}}">
+        <div class="ability-label">
+          <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div class="ability-value">
+          {{data.scores.con.value}}
+        </div>
+      </div>
+      <div class="ability-row cha" data-action="rollCheck" data-ability="cha" title="{{localize 'OSRMUI.roll'}} {{localize 'OSRMUI.charisma'}} {{localize 'OSRMUI.check'}}">
+        <div class="ability-label">
+          <i class="fa-solid fa-comment"></i>
+        </div>
+        <div class="ability-value">
+          {{data.scores.cha.value}}
+        </div>
+      </div>
+  </div>
+  {{/if}}
+  <div class="cols">
+    <div class="saves-container" title="{{localize 'OSRMUI.saves'}}">
+      <div class="save-row" data-save="death" data-action="rollSave" title="{{localize 'OSRMUI.roll'}} {{localize 'OSRMUI.death'}} {{localize 'OSRMUI.save'}}">
+        <div class="save-label">
+          {{localize 'OSRMUI.death'}}
+        </div>
+        <div class="save-value">
+          {{data.saves.death.value}}
+        </div>
+      </div>
+      <div class="save-row" data-save="wand" data-action="rollSave" title="{{localize 'OSRMUI.roll'}} {{localize 'OSRMUI.wands'}} {{localize 'OSRMUI.save'}}">
+        <div class="save-label">
+          {{localize 'OSRMUI.wands'}}
+        </div>
+        <div class="save-value">
+          {{data.saves.wand.value}}
+        </div>
+      </div>
+      <div class="save-row" data-save="paralysis" data-action="rollSave" title="{{localize 'OSRMUI.roll'}} {{localize 'OSRMUI.paralysis'}} {{localize 'OSRMUI.save'}}">
+        <div class="save-label">
+          {{localize 'OSRMUI.paralysis'}}
+        </div>
+        <div class="save-value">
+          {{data.saves.paralysis.value}}
+        </div>
+      </div>
+      <div class="save-row" data-save="breath" data-action="rollSave" title="{{localize 'OSRMUI.roll'}} {{localize 'OSRMUI.breath'}} {{localize 'OSRMUI.save'}}">
+        <div class="save-label">
+          {{localize 'OSRMUI.breath'}}
+        </div>
+        <div class="save-value">
+          {{data.saves.breath.value}}
+        </div>
+      </div>
+      <div class="save-row" data-save="spell" data-action="rollSave" title="{{localize 'OSRMUI.roll'}} {{localize 'OSRMUI.spells'}} {{localize 'OSRMUI.save'}}">
+        <div class="save-label">
+          {{localize 'OSRMUI.spells'}}
+        </div>
+        <div class="save-value">
+          {{data.saves.spell.value}}
+        </div>
+        
+      </div>
+    <div class="filler"></div>
+    </div>
+    <div class="item-container">
+      <div class="attacks-container" title="{{localize 'OSRMUI.attacks'}}">
+        {{#each data.weapons as |attack|}}
+          <div class="ability-icon attack" data-uuid="{{attack.uuid}}">
+            <img src="{{attack.img}}" alt="{{attack.name}}" title="{{attack.name}}{{#if ../isMonster}}-{{attack.system.counter.value}}/{{attack.system.counter.max}}{{/if}}" class="icon"  data-action="rollAttack">
+          </div>
+        {{/each}}
+      </div>
+      <div class="abilities-container" title="{{localize 'OSRMUI.abilities'}}">
+        {{#each data.abilities as |ability|}}
+          <div class="ability-icon ability" data-uuid="{{ability.uuid}}">
+            <img src="{{ability.img}}" alt="{{ability.name}}" title="{{ability.name}}" class="icon" data-uuid="{{ability.uuid}}" data-action="rollAbility">
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

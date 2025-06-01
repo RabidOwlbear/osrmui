@@ -1,0 +1,62 @@
+{
+  "OSRMUI": {
+    "title": "OSR Monster UI",
+    "hp": "HP",
+    "ac": "AC / AAC",
+    "thac0": "THAC0 / BBA",
+    "bba": "BBA",
+    "aac": "AAC",
+    "thaco": "THACO",
+    "movement": "Movement",
+    "saves": "Saves",
+    "attacks": "Attacks",
+    "abilities": "Abilities",
+    "baseEncounter": "Base / Encounter",
+    "death": "Death",
+    "wands": "Wands",
+    "spells": "Spells",
+    "paralysis": "Paralysis",
+    "breath": "Breath",
+    "resetAttacks": "Reset Attacks",
+    "roll": "Roll",
+    "save": "Save",
+    "check": "Check",
+    "openMonsterCard": "Open Monster Card",
+    "openActorCard": "Open Actor Card",
+    "strength": "Strength",
+    "intelligence": "Intelligence",
+    "wisdom": "Wisdom",
+    "dexterity": "Dexterity",
+    "constitution": "Constitution",
+    "charisma": "Charisma",
+    "abilityAbbrev": {
+      "str": "STR",
+      "int": "INT",
+      "wis": "WIS",
+      "dex": "DEX",
+      "con": "CON",
+      "cha": "CHA"
+    },
+    "settings": {
+      "combatColor": "Combat Color",
+      "overrideColor": "Override Combat Color",
+      "characterColor": "Default Character Card Color",
+      "monsterColor": "Default Monster Card Color",
+      "characterColorHint": "Default color for character UI cards",
+      "monsterColorHint": "Default color for monster UI cards",
+      "overrideColorHint": "Override the color of the UI card with the default color",
+      "combatColorHint": "Changes the color of the UI card to match the actor's combat group"
+    },
+    "blue": "Blue",
+    "green": "Green",
+    "red": "Red",
+    "orange": "Orange",
+    "yellow": "Yellow",
+    "purple": "Purple",
+    "white": "White",
+    "black": "Black"
+    
+    
+    
+  }
+}

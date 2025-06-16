@@ -13,7 +13,7 @@ Hooks.on("ready", () => {
 Hooks.on("renderTokenHUD", (app, html, data) => {
   let colRight;
   let colLeft;
-
+  const popout = game.modules.get('popout')?.active || false;
   const actor = app?.object?.actor;
   const iconClass = actor.type === 'monster' ? 'fa-spaghetti-monster-flying' : 'fa-user';
   const tooltip = actor.type === 'monster' ? game.i18n.localize('OSRMUI.openMonsterCard') : game.i18n.localize('OSRMUI.openActorCard');
@@ -42,12 +42,13 @@ Hooks.on("renderTokenHUD", (app, html, data) => {
         await utils.sleep(300);
         existing.render();
       }else{
-        new OSRActorCard({ actor: actor, id: `monster-card-${actor.uuid}` }).render(true,{ 
+       await new OSRActorCard({ actor: actor, id: `monster-card-${actor.uuid}` }).render(true,{ 
           window: { title: actor.name,
             icon: `fas ${iconClass}`
           }, 
           position:{ top: ev.y - 150, left: ev.x + 95} 
         });
+        
       }
     }
     });

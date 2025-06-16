@@ -1,5 +1,6 @@
 import { CONST } from "../const.mjs";
 import { OSRMUIBase } from "./osrmui-base.mjs";
+import { utils } from "../util.mjs";
 
 export class OSRActorCard extends OSRMUIBase {
   constructor(options) {
@@ -15,12 +16,10 @@ export class OSRActorCard extends OSRMUIBase {
     },
     classes: ["osrmui", "osr-actor-card"],
     tag: "osrmui-app", // The default is "div"
-    // tabs: [{ navSelector: '.tabs', contentSelector: '.sheet-body', initial: 'main' }],
     window: {
       icon: "fas fa-spaghetti-monster-flying", // You can now add an icon to the header
       title: "", //localization string
     },
-    // dragDrop: [{ dragSelector: '[data-drag]', dropSelector: '.drop' }],
     actions: {
       rollSave: OSRActorCard.rollSave,
       rollAttack: OSRActorCard.rollAttack,
@@ -44,10 +43,9 @@ export class OSRActorCard extends OSRMUIBase {
       data: this.actor.system,
       isMonster: this.actor.type === "monster",
     });
-    console.log(context);
     return context;
   }
-  _onRender(context, options) {
+  async _onRender(context, options) {
     const el = this.element;
     if (
       this.actor.type == "character" &&
@@ -61,6 +59,19 @@ export class OSRActorCard extends OSRMUIBase {
       el.classList.add("monster-card");
     }
     this._setColorTheme();
+    // popout accommodation
+    if(game.modules.get('popout')?.active){
+      // wait for popout control to render
+      await utils.sleep(150);
+      const header = this.element.querySelector('.window-header');
+      const pButton = header.querySelector('.popout-module-button');
+      pButton?.addEventListener('click', async (ev) => {
+        ev.preventDefault();
+        await utils.sleep(300);
+        this.render();
+      });
+      
+    }
     this._forceTabInit(context.tabs);
 
     const img = this.element.querySelector(".img");
@@ -109,17 +120,11 @@ export class OSRActorCard extends OSRMUIBase {
       }
     } else {
       if (this.actor.type == "character") {
-        // el.style.setProperty("--glow-color", "var(--actor-glow)");
-        // el.style.setProperty("--gradient-color-a", "var(--actor-color)");
-        // el.style.setProperty("--btn-hover", "var(--actor-hover)");
         el.style.setProperty("--glow-color", `var(--glow-${characterColor})`);
         el.style.setProperty("--gradient-color-a", `var(--group-color-${characterColor})`);
         el.style.setProperty("--btn-hover", `var(--group-d-color-${characterColor})`);
         el.style.setProperty("--stat-bar-txt", `var(--group-d-color-${characterColor})`);
       } else if (this.actor.type == "monster") {
-        // el.style.setProperty("--glow-color", "var(--monster-glow)");
-        // el.style.setProperty("--gradient-color-a", "var(--monster-color)");
-        // el.style.setProperty("--btn-hover", "var(--monster-hover)");
         el.style.setProperty("--glow-color", `var(--glow-${monsterColor})`);
         el.style.setProperty("--gradient-color-a", `var(--group-color-${monsterColor})`);
         el.style.setProperty("--btn-hover", `var(--group-d-color-${monsterColor})`);
@@ -169,7 +174,11 @@ export class OSRActorCard extends OSRMUIBase {
   static rollAbility(ev) {
     const el = ev.target.closest(".ability-icon.ability");
     const item = this.actor.items.find((item) => item.uuid === el.dataset.uuid);
-    item.roll();
+    if (ev.shiftKey) {
+      item.sheet.render(true);
+    } else {
+      item.roll();
+    }
   }
   static openMonsterSheet(ev) {
     this.actor.sheet.render(true);

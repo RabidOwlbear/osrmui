@@ -2,7 +2,7 @@
   "id": "osrmui",
   "title": "OSR Monster UI",
   "description": "Adds a custom mini monster sheet for OSE system monsters, accessible from the token UI.",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "authors": [
     {
       "name": "Rabid Owlbear"

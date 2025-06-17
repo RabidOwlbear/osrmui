@@ -109,7 +109,7 @@ export class OSRActorCard extends OSRMUIBase {
       if(!combatData){
         return;
       }
-      const color = combatData.group.name;
+      const color = game.version >= 13 ? combatData.group.name : combatData.flags.ose.group;
       if (color) {
         el.style.setProperty("--glow-color", `var(--glow-${color})`);
         el.style.setProperty("--gradient-color-a", `var(--group-color-${color})`);

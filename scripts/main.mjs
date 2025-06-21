@@ -34,22 +34,12 @@ Hooks.on("renderTokenHUD", (app, html, data) => {
     btn.appendChild(icon);
     colLeft.appendChild(btn);
     btn.addEventListener('click', async (ev) => {
-      const buttonEl = ev.originalTarget.closest('#monster-card-btn');;  
+      console.log('click',ev, ev.target)
+      const buttonEl = ev.target.closest('#monster-card-btn');  
       if(buttonEl){
       ev.preventDefault();
-      const existing = utils.getApp(`monster-card-${actor.uuid}`);
-      if(existing){
-        await utils.sleep(300);
-        existing.render();
-      }else{
-       await new OSRActorCard({ actor: actor, id: `monster-card-${actor.uuid}` }).render(true,{ 
-          window: { title: actor.name,
-            icon: `fas ${iconClass}`
-          }, 
-          position:{ top: ev.y - 150, left: ev.x + 95} 
-        });
-        
-      }
+      utils.openCard(ev);
+     
     }
     });
     

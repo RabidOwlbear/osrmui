@@ -1,0 +1,62 @@
+{
+  "OSRMUI": {
+    "title": "OSR 怪物界面",
+    "hp": "HP",
+    "ac": "AC / AAC",
+    "thac0": "THAC0 / BBA",
+    "bba": "BBA",
+    "aac": "AAC",
+    "thaco": "THACO",
+    "movement": "移动",
+    "saves": "豁免",
+    "attacks": "攻击",
+    "abilities": "属性",
+    "baseEncounter": "基础/遭遇",
+    "death": "死亡/灾厄",
+    "wands": "魔杖/射线",
+    "spells": "法术",
+    "paralysis": "麻痹/定身",
+    "breath": "喷吐/爆炸",
+    "resetAttacks": "重置攻击",
+    "roll": "投骰",
+    "save": "豁免",
+    "check": "检定",
+    "openMonsterCard": "开启怪物卡",
+    "openActorCard": "开启角色卡",
+    "strength": "力量",
+    "intelligence": "智力",
+    "wisdom": "睿知",
+    "dexterity": "敏捷",
+    "constitution": "体质",
+    "charisma": "魅力",
+    "abilityAbbrev": {
+      "str": "力",
+      "int": "智",
+      "wis": "睿",
+      "dex": "敏",
+      "con": "体",
+      "cha": "魅"
+    },
+    "settings": {
+      "combatColor": "战斗颜色",
+      "overrideColor": "覆盖战斗颜色",
+      "characterColor": "默认角色卡颜色",
+      "monsterColor": "默认怪物卡颜色",
+      "characterColorHint": "角色UI卡默认颜色",
+      "monsterColorHint": "怪物UI卡默认颜色",
+      "overrideColorHint": "用默认颜色覆盖UI卡颜色",
+      "combatColorHint": "更改UI卡颜色，使其匹配角色的战斗组"
+    },
+    "blue": "蓝",
+    "green": "绿",
+    "red": "红",
+    "orange": "橙",
+    "yellow": "黄",
+    "purple": "紫",
+    "white": "白",
+    "black": "黑"
+    
+    
+    
+  }
+}
